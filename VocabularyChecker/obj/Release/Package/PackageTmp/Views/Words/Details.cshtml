@@ -1,0 +1,42 @@
+﻿@model VocabularyChecker_Model.Word
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Word</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.English)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VietnameseMeaning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VietnameseMeaning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartOfSpeech)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartOfSpeech)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

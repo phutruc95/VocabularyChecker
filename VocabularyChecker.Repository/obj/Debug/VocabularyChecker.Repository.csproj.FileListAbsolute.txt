@@ -1,0 +1,16 @@
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\obj\Debug\VocabularyChecker.Repository.csproj.CoreCompileInputs.cache
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\bin\Debug\VocabularyChecker.Repository.dll.config
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\bin\Debug\VocabularyChecker.Repository.dll
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\bin\Debug\VocabularyChecker.Repository.pdb
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\bin\Debug\EntityFramework.dll
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\bin\Debug\VocabularyChecker-Model.dll
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\bin\Debug\VocabularyChecker-Model.pdb
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\bin\Debug\EntityFramework.xml
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\obj\Debug\VocabularyChecker.Repository.csprojAssemblyReference.cache
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\obj\Debug\VocabularyChecker.Repository.csproj.CopyComplete
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\obj\Debug\VocabularyChecker.Repository.dll
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\obj\Debug\VocabularyChecker.Repository.pdb
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\obj\Debug\VocabularyChecker.Repository.Migrations.AddWordModel.resources
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\obj\Debug\VocabularyChecker.Repository.csproj.GenerateResource.cache

@@ -1,0 +1,6 @@
+D:\Project\VocabularyChecker\VocabularyChecker-Model\bin\Release\VocabularyChecker-Model.dll
+D:\Project\VocabularyChecker\VocabularyChecker-Model\bin\Release\VocabularyChecker-Model.pdb
+D:\Project\VocabularyChecker\VocabularyChecker-Model\obj\Release\VocabularyChecker-Model.csprojAssemblyReference.cache
+D:\Project\VocabularyChecker\VocabularyChecker-Model\obj\Release\VocabularyChecker-Model.csproj.CoreCompileInputs.cache
+D:\Project\VocabularyChecker\VocabularyChecker-Model\obj\Release\VocabularyChecker-Model.dll
+D:\Project\VocabularyChecker\VocabularyChecker-Model\obj\Release\VocabularyChecker-Model.pdb
