@@ -43,3 +43,16 @@
 }
 
 </table>
+
+<input id="xml-file" type="file" name="xml-file" />
+
+<script>
+    $(document).ready(function () {
+        $('input[name="xml-file"]').change(function (e) {
+            var file = e.target.files[0];
+            var reader = new FileReader();
+            reader.readAsText(file);
+            console.log(reader);
+        });
+    });
+</script>
