@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Exercises</h2>
+
+<ol class="exercise">
+    <li class="">She has been <span tabindex="1" class="ex-input" word-length="9" id="ex1-input"></span> for the presidency.</li>
+    <li class="">She was directly <span tabindex="2" class="ex-input" word-length="11" id="ex2-input"></span> to the president.</li>
+</ol>
+<button id="checker">Check</button>
+
+<style>
+    .exercise li {
+        position: relative;
+    }
+        .exercise li:before {
+            position: absolute;
+            top: 0;
+            left: -30px;
+        }
+        .exercise li.true::before { 
+            content: "\2714"; 
+            color: green; }
+        .exercise li.false::before {
+            content: "\2718";
+            color: red;
+        }
+    .ex-input {
+        color: blue;
+    }
+    .ex-input:focus {
+        color: blueviolet;
+    }
+</style>
+<script>
+    class ExInput {
+        constructor(id) {
+            this.Ele = $(id);
+            this.pointer = 0;
+
+            this.resetWord();
+
+            let self = this;
+            this.Ele.keypress(function (e) {
+                if (self.pointer >= 0 && self.pointer < self.WordLength) {
+                    self.Word = self.Word.substr(0, self.pointer) + e.key + self.Word.substr(self.pointer + 1);
+                    self.Ele.html(self.Word);
+                    self.pointer++;
+                }
+            });
+            this.Ele.keydown(function (e) {
+                if (e.keyCode == 8) {
+                    if (self.pointer > 0) {
+                        self.pointer--;
+                        self.Word = self.Word.substr(0, self.pointer) + '_' + self.Word.substr(self.pointer + 1);
+                        self.Ele.html(self.Word);
+                    }
+                }
+                else if (e.keyCode == 46) {
+                    self.resetWord();
+                }
+            });
+        }
+
+        get WordLength() {
+            return parseInt(this.Ele.attr('word-length'));
+        }
+
+        resetWord() {
+            this.Word = '';
+            for (var i = 0; i < this.WordLength; i++) {
+                this.Word += '_';
+            }
+            this.Ele.html(this.Word);
+            this.pointer = 0;
+        }
+    }
+    $(document).ready(function () {
+        var exInput1 = new ExInput('#ex1-input');
+        var exInput2 = new ExInput('#ex2-input');
+
+        $('#checker').on('click', function () {
+            $('.exercise li').removeClass('true');
+            $('.exercise li').removeClass('false');
+            if (exInput1.Word == 'nominated') {
+                exInput1.Ele.parent('li').addClass('true');
+            }
+            else {
+                exInput1.Ele.parent('li').addClass('false');
+            }
+            if (exInput2.Word == 'subordinate') {
+                exInput2.Ele.parent('li').addClass('true');
+            }
+            else {
+                exInput2.Ele.parent('li').addClass('false');
+            }
+        });
+    });
+</script>

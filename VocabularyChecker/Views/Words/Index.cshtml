@@ -47,12 +47,38 @@
 <input id="xml-file" type="file" name="xml-file" />
 
 <script>
+    var x;
     $(document).ready(function () {
         $('input[name="xml-file"]').change(function (e) {
             var file = e.target.files[0];
             var reader = new FileReader();
             reader.readAsText(file);
-            console.log(reader);
+            reader.onload = function () {
+                var content = reader.result;
+                inputWordsXML(content);
+            };
         });
     });
+
+    function inputWordsXML(content) {
+        $.ajax({
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            url: "@Url.Action("InputWordsXML", "Words")",
+            data: JSON.stringify({ xmlString: content }),
+            beforeSend: function () {
+                
+            },
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (xhr) { // if error occured
+                
+            },
+            complete: function () {
+                
+            }
+        });
+    }
 </script>

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace VocabularyChecker.Controllers
 {
-    public class ExerciseController : Controller
+    public class ExercisesController : Controller
     {
         // GET: Exercise
         public ActionResult Index()

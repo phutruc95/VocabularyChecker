@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml;
 using VocabularyChecker.Repository;
 using VocabularyChecker_Model;
 
@@ -114,6 +115,24 @@ namespace VocabularyChecker.Controllers
             db.Words.Remove(word);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public JsonResult InputWordsXML(string xmlString)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xmlString);
+            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+            {
+                Word word = new Word();
+                word.English = node["english"]?.InnerText;
+                word.VietnameseMeaning = node["vietnamese"]?.InnerText;
+                word.PartOfSpeech = node["form"]?.InnerText;
+
+                db.Words.Add(word);
+            }
+            db.SaveChanges();
+
+            return Json(new { isSuccess = true }, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)
