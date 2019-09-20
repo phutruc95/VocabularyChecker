@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<VocabularyChecker_Model.Exercise>
+
 @{
     ViewBag.Title = "Index";
 }
@@ -6,8 +7,10 @@
 <h2>Exercises</h2>
 
 <ol class="exercise">
-    <li class="">She has been <span tabindex="1" class="ex-input" word-length="9" id="ex1-input"></span> for the presidency.</li>
-    <li class="">She was directly <span tabindex="2" class="ex-input" word-length="11" id="ex2-input"></span> to the president.</li>
+    @foreach (var exercise in Model)
+    {
+        <li class="">@Html.Raw(exercise.Content)</li>
+    }
 </ol>
 <button id="checker">Check</button>
 
@@ -15,24 +18,30 @@
     .exercise li {
         position: relative;
     }
+
         .exercise li:before {
             position: absolute;
             top: 0;
             left: -30px;
         }
-        .exercise li.true::before { 
-            content: "\2714"; 
-            color: green; }
+
+        .exercise li.true::before {
+    content: "\2714";
+    color: green;
+}
+
         .exercise li.false::before {
-            content: "\2718";
-            color: red;
-        }
+    content: "\2718";
+    color: red;
+}
+
     .ex-input {
         color: blue;
     }
-    .ex-input:focus {
-        color: blueviolet;
-    }
+
+        .ex-input:focus {
+            color: blueviolet;
+        }
 </style>
 <script>
     class ExInput {
@@ -77,25 +86,53 @@
             this.pointer = 0;
         }
     }
+
+    var lstExInput = [];
     $(document).ready(function () {
-        var exInput1 = new ExInput('#ex1-input');
-        var exInput2 = new ExInput('#ex2-input');
+        $('.ex-input').each(function (i, item) {
+            let id = $(item).attr('id');
+            lstExInput.push(new ExInput('#' + id));
+        });
 
         $('#checker').on('click', function () {
-            $('.exercise li').removeClass('true');
-            $('.exercise li').removeClass('false');
-            if (exInput1.Word == 'nominated') {
-                exInput1.Ele.parent('li').addClass('true');
-            }
-            else {
-                exInput1.Ele.parent('li').addClass('false');
-            }
-            if (exInput2.Word == 'subordinate') {
-                exInput2.Ele.parent('li').addClass('true');
-            }
-            else {
-                exInput2.Ele.parent('li').addClass('false');
-            }
+            checkAnswers();
         });
     });
+
+    function searializeAnswers() {
+        var dataArr = [];
+        $.each(lstExInput, function (i, item) {
+            dataArr.push({
+                ID: item.Ele.data('id'),
+                KeyWordAnswer: item.Word.replace(/_/g, "")
+            });
+        });
+        return JSON.stringify(dataArr);
+    }
+
+    function checkAnswers() {
+        $('.ex-input').parent('li').removeClass('true');
+        $('.ex-input').parent('li').removeClass('false');
+        $.ajax({
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            url: "@Url.Action("CheckAnswers", "Exercises")",
+            data: searializeAnswers(),
+            beforeSend: function () {
+
+            },
+            success: function (res) {
+                $.each(res, function (i, item) {
+                    $('#ex' + item.ID + '-input').parent('li').addClass(item.IsCorrect.toString());
+                });
+            },
+            error: function (xhr) { // if error occured
+
+            },
+            complete: function () {
+
+            }
+        });
+    }
 </script>

@@ -52,6 +52,10 @@
     <Compile Include="Migrations\201909060954560_Add-Word-Model.Designer.cs">
       <DependentUpon>201909060954560_Add-Word-Model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909200804472_Exercise.cs" />
+    <Compile Include="Migrations\201909200804472_Exercise.Designer.cs">
+      <DependentUpon>201909200804472_Exercise.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="VocabularyCheckerContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +73,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201909060954560_Add-Word-Model.resx">
       <DependentUpon>201909060954560_Add-Word-Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909200804472_Exercise.resx">
+      <DependentUpon>201909200804472_Exercise.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

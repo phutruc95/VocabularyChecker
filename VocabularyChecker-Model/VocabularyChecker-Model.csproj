@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Word.cs" />
+    <Compile Include="Model\Exercise.cs" />
+    <Compile Include="ViewModel\Answer.cs" />
+    <Compile Include="Model\Word.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -35,50 +35,11 @@
             @Html.DisplayFor(modelItem => item.PartOfSpeech)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Details", "Details", new { id=item.ID })
         </td>
     </tr>
 }
 
 </table>
 
-<input id="xml-file" type="file" name="xml-file" />
 
-<script>
-    var x;
-    $(document).ready(function () {
-        $('input[name="xml-file"]').change(function (e) {
-            var file = e.target.files[0];
-            var reader = new FileReader();
-            reader.readAsText(file);
-            reader.onload = function () {
-                var content = reader.result;
-                inputWordsXML(content);
-            };
-        });
-    });
-
-    function inputWordsXML(content) {
-        $.ajax({
-            type: 'POST',
-            contentType: "application/json; charset=utf-8",
-            dataType: 'json',
-            url: "@Url.Action("InputWordsXML", "Words")",
-            data: JSON.stringify({ xmlString: content }),
-            beforeSend: function () {
-                
-            },
-            success: function (data) {
-                console.log(data);
-            },
-            error: function (xhr) { // if error occured
-                
-            },
-            complete: function () {
-                
-            }
-        });
-    }
-</script>

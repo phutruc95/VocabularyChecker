@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace VocabularyChecker_Model
 {
-    public class Word
+    public class Exercise
     {
         [Key]
         public int ID { get; set; }
-        public string English { get; set; }
-        public string VietnameseMeaning { get; set; }
-        public string PartOfSpeech { get; set; }
-        public List<string> Examples { get; set; }
+        public string Content { get; set; }
+        public string KeyWord { get; set; }
+
+        public int WordId { get; set; }
+        public Word Word { get; set; }
     }
 }

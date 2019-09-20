@@ -103,6 +103,20 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Exercises\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Exercises\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Exercises\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Exercises\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Exercises\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Words\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Words\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Words\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Words\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Words\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -117,6 +131,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ExercisesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\WordsController.cs" />
     <Compile Include="Controllers\ExercisesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WordsController.cs" />
@@ -135,10 +153,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Words\Create.cshtml" />
-    <Content Include="Views\Words\Delete.cshtml" />
     <Content Include="Views\Words\Details.cshtml" />
-    <Content Include="Views\Words\Edit.cshtml" />
     <Content Include="Views\Words\Index.cshtml" />
     <Content Include="Views\Exercises\Index.cshtml" />
     <None Include="Web.Debug.config">
@@ -150,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

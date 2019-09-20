@@ -15,5 +15,7 @@ namespace VocabularyChecker.Repository
 
         }
         public DbSet<Word> Words { get; set; }
+
+        public System.Data.Entity.DbSet<VocabularyChecker_Model.Exercise> Exercises { get; set; }
     }
 }

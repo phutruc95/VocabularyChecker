@@ -14,3 +14,4 @@ D:\Project\VocabularyChecker\VocabularyChecker.Repository\obj\Debug\VocabularyCh
 D:\Project\VocabularyChecker\VocabularyChecker.Repository\obj\Debug\VocabularyChecker.Repository.pdb
 D:\Project\VocabularyChecker\VocabularyChecker.Repository\obj\Debug\VocabularyChecker.Repository.Migrations.AddWordModel.resources
 D:\Project\VocabularyChecker\VocabularyChecker.Repository\obj\Debug\VocabularyChecker.Repository.csproj.GenerateResource.cache
+D:\Project\VocabularyChecker\VocabularyChecker.Repository\obj\Debug\VocabularyChecker.Repository.Migrations.Exercise.resources
